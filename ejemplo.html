@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+<script>
+$(document).ready(function(){
+ $("form").submit(function(){
+   var response = grecaptcha.getResponse();
+      if(response.length == 0){
+          alert('Por favor chequear la Captcha');
+    return false;}});});
+</script>
+<script>
+ var onloadCallback = function() {
+ grecaptcha.render('html_element', {
+ 'sitekey' : '6LfOhskgAAAAAEWOXuz8EGkd627vRWDfVEUhnoUc'});};
+</script>
+</head>
+<body>
+<h3>Descargar srchivo</h3>
+<form action="https://norfipc.com/archivo-descargar.zip" method="post">
+<div id="html_element"></div><br>
+<input type="submit" value="Descargar">
+</form> 
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+</body>
+</html>
